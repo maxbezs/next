@@ -62,7 +62,12 @@ const Form = () => {
 
   const sendEmail = async (e) => {
     e.preventDefault();
-
+    if (!formData.name || !formData.time || !formData.email) {
+      toast.error(
+        "Please fill out the required fields: Name, Time, and Email."
+      );
+      return;
+    }
     const data = {
       email: formData.email,
       name: formData.name,
@@ -89,6 +94,7 @@ const Form = () => {
       }
     } catch (error) {
       toast.error("An error occurred. Please try again later.");
+      console.log(error);
     } finally {
       setIsLoading(false);
     }
@@ -160,8 +166,14 @@ const Form = () => {
           </div>
           <button
             type="submit"
-            className="align-baseline bg-neutral-700 rounded-lg text-white cursor-pointer select-none focus:outline-none py-3 px-4 no-underline w-fit"
-            disabled={isLoading}
+            className={`align-baseline rounded-lg  cursor-pointer select-none focus:outline-none py-3 px-4 no-underline w-fit ${
+              isLoading || !formData.name || !formData.time || !formData.email
+                ? " bg-neutral-700 cursor-not-allowed text-neutral-500"
+                : "bg-neutral-700 hover:bg-neutral-800 text-white"
+            }`}
+            disabled={
+              isLoading || !formData.name || !formData.time || !formData.email
+            }
           >
             {isLoading ? "Scheduling..." : "Schedule Meeting"}
           </button>
