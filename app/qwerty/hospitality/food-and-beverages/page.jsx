@@ -1,9 +1,17 @@
+import Breadcrumbs from "@/app/components/Breadcrumbs";
 import H1 from "@/app/components/H1";
 import Section from "@/app/components/Section";
 import Sidebar from "@/app/components/Sidebar";
 
 const FoodAndBeverages = () => {
   const baseHref = "/qwerty/hospitality/food-and-beverages/";
+
+  const getRandomParagraph = (scope) => {
+    const randomCategory = scope[Math.floor(Math.random() * scope.length)];
+    return randomCategory.paragraph[
+      Math.floor(Math.random() * randomCategory.paragraph.length)
+    ];
+  };
 
   const restaurants = [
     {
@@ -328,6 +336,696 @@ const FoodAndBeverages = () => {
       href: `${baseHref}pop-up-bar`,
     },
   ];
+  const cafes = [
+    {
+      scope: "Cafes",
+      heading: "Artisan Coffee Shop",
+      paragraph: [
+        "Increase customer dwell time by 20% today with cozy decor and free Wi-Fi access!",
+        "Boost coffee bean sales by 15% today with online ordering and subscription services!",
+        "Enhance social media presence by 30% today with interactive coffee workshops and latte art competitions!",
+      ],
+      buttonText: "Read Article",
+      href: `${baseHref}artisan-coffee-shop`,
+    },
+    {
+      scope: "Cafes",
+      heading: "Neighborhood Bakery Cafe",
+      paragraph: [
+        "Increase foot traffic by 25% today with fresh daily specials and loyalty discounts!",
+        "Boost online reviews by 20% today with user-friendly mobile ordering and quick delivery services!",
+        "Enhance community engagement by 30% today with local events and partnerships!",
+      ],
+      buttonText: "Read Article",
+      href: `${baseHref}neighborhood-bakery-cafe`,
+    },
+    {
+      scope: "Cafes",
+      heading: "Tea House",
+      paragraph: [
+        "Expand your customer base by 20% today with diverse tea selections and cultural events!",
+        "Increase average spend per visit by 15% today with gourmet pastries and tea pairing menus!",
+        "Grow online visibility by 25% today with interactive social media campaigns and influencer collaborations!",
+      ],
+      buttonText: "Read Article",
+      href: `${baseHref}tea-house`,
+    },
+    {
+      scope: "Cafes",
+      heading: "Vegan Café",
+      paragraph: [
+        "Increase sales of plant-based products by 20% today with innovative menu items and specials!",
+        "Boost social media engagement by 25% today with vegan cooking classes and sustainability initiatives!",
+        "Enhance customer loyalty by 30% today with a rewards program and exclusive offers!",
+      ],
+      buttonText: "Read Article",
+      href: `${baseHref}vegan-cafe`,
+    },
+    {
+      scope: "Cafes",
+      heading: "Bookstore Café",
+      paragraph: [
+        "Attract more readers by 20% today with book club meetings and author events!",
+        "Increase café sales by 15% today with themed menus and special discounts for book purchases!",
+        "Grow online community by 30% today with a virtual book club and interactive social media content!",
+      ],
+      buttonText: "Read Article",
+      href: `${baseHref}bookstore-cafe`,
+    },
+    {
+      scope: "Cafes",
+      heading: "Dessert Café",
+      paragraph: [
+        "Boost dessert sales by 25% today with seasonal specialties and custom cake orders!",
+        "Increase foot traffic by 20% today with dessert making workshops and kids' baking classes!",
+        "Enhance your online presence by 30% today with mouth-watering photography and dessert recipe blogs!",
+      ],
+      buttonText: "Read Article",
+      href: `${baseHref}dessert-cafe`,
+    },
+    {
+      scope: "Cafes",
+      heading: "Internet Café",
+      paragraph: [
+        "Increase customer retention by 20% today with high-speed internet and gaming events!",
+        "Boost beverage and snack sales by 15% today with combo deals and loyalty programs!",
+        "Enhance online reviews by 25% today with customer satisfaction surveys and responsive service!",
+      ],
+      buttonText: "Read Article",
+      href: `${baseHref}internet-cafe`,
+    },
+    {
+      scope: "Cafes",
+      heading: "Organic Juice Bar",
+      paragraph: [
+        "Grow product range sales by 20% today with fresh, organic juice cleanses and health-focused beverages!",
+        "Increase social media engagement by 25% today with wellness workshops and influencer partnerships!",
+        "Boost in-store traffic by 30% today with a loyalty program and referral incentives!",
+      ],
+      buttonText: "Read Article",
+      href: `${baseHref}organic-juice-bar`,
+    },
+    {
+      scope: "Cafes",
+      heading: "Gourmet Coffee Bar",
+      paragraph: [
+        "Increase artisan coffee sales by 20% today with exclusive bean selections and brewing techniques!",
+        "Boost customer loyalty by 30% today with a gourmet coffee club and tasting events!",
+        "Enhance brand prestige by 25% today with premium decor and unique coffee experiences!",
+      ],
+      buttonText: "Read Article",
+      href: `${baseHref}gourmet-coffee-bar`,
+    },
+    {
+      scope: "Cafes",
+      heading: "Health and Wellness Café",
+      paragraph: [
+        "Increase sales of healthy options by 20% today with organic and superfood menu items!",
+        "Boost community engagement by 25% today with wellness workshops and health-focused events!",
+        "Grow online influence by 30% today with a strong social media presence focused on health and wellness!",
+      ],
+      buttonText: "Read Article",
+      href: `${baseHref}health-wellness-cafe`,
+    },
+    {
+      scope: "Cafes",
+      heading: "Retro Style Café",
+      paragraph: [
+        "Attract more customers by 20% today with nostalgic decor and classic menu items!",
+        "Increase social media buzz by 25% today with retro-themed events and photo opportunities!",
+        "Boost customer loyalty by 30% today with a nostalgic loyalty program and memorabilia!",
+      ],
+      buttonText: "Read Article",
+      href: `${baseHref}retro-style-cafe`,
+    },
+    {
+      scope: "Cafes",
+      heading: "Student Study Café",
+      paragraph: [
+        "Increase foot traffic by 25% today with study-friendly amenities and student discounts!",
+        "Boost sales during off-peak hours by 20% today with group study deals and quiet zones!",
+        "Enhance online engagement by 30% today with educational workshops and academic events!",
+      ],
+      buttonText: "Read Article",
+      href: `${baseHref}student-study-cafe`,
+    },
+    {
+      scope: "Cafes",
+      heading: "Themed Café",
+      paragraph: [
+        "Attract niche customers by 20% today with a unique and immersive theme experience!",
+        "Boost social media presence by 30% today with themed events and Instagrammable spots!",
+        "Increase customer retention by 25% today with theme-related merchandise and loyalty programs!",
+      ],
+      buttonText: "Read Article",
+      href: `${baseHref}themed-cafe`,
+    },
+    {
+      scope: "Cafes",
+      heading: "Luxury Café",
+      paragraph: [
+        "Increase sales of premium products by 20% today with exclusive offerings and high-end ambiance!",
+        "Boost client retention by 25% today with personalized service and luxury loyalty programs!",
+        "Enhance brand image by 30% today with sophisticated marketing and upscale events!",
+      ],
+      buttonText: "Read Article",
+      href: `${baseHref}luxury-cafe`,
+    },
+    {
+      scope: "Cafes",
+      heading: "Local Community Café",
+      paragraph: [
+        "Boost community involvement by 20% today with local events and neighborhood partnerships!",
+        "Increase customer loyalty by 25% today with community-focused programs and local product offerings!",
+        "Enhance local SEO and online presence by 30% today with targeted local marketing and social media engagement!",
+      ],
+      buttonText: "Read Article",
+      href: `${baseHref}local-community-cafe`,
+    },
+  ];
+  const lounges = [
+    {
+      scope: "Lounges",
+      heading: "Cocktail Bar",
+      paragraph: [
+        "Boost cocktail sales by 25% today with creative mixology classes and social media sharing!",
+        "Increase patron visits by 20% with live music nights and guest DJ events!",
+        "Enhance online presence by 30% with influencer collaborations and immersive virtual tours!",
+      ],
+      buttonText: "Read Article",
+      href: `${baseHref}cocktail-bar`,
+    },
+    {
+      scope: "Lounges",
+      heading: "Wine Lounge",
+      paragraph: [
+        "Increase wine tasting reservations by 20% today with exclusive wine club memberships!",
+        "Grow social media engagement by 25% with virtual sommelier sessions and wine pairing tips!",
+        "Boost customer loyalty by 30% with personalized wine selection services and members-only events!",
+      ],
+      buttonText: "Read Article",
+      href: `${baseHref}wine-lounge`,
+    },
+    {
+      scope: "Lounges",
+      heading: "Jazz Lounge",
+      paragraph: [
+        "Enhance evening sales by 20% with themed jazz nights and special performance events!",
+        "Grow patronage by 25% with a loyalty program for frequent visitors!",
+        "Increase online visibility by 30% with live-streamed performances and interactive online events!",
+      ],
+      buttonText: "Read Article",
+      href: `${baseHref}jazz-lounge`,
+    },
+    {
+      scope: "Lounges",
+      heading: "Rooftop Lounge",
+      paragraph: [
+        "Boost visitor numbers by 20% with exclusive rooftop events and sunset happy hours!",
+        "Increase social media buzz by 25% with picturesque settings and photo contests!",
+        "Enhance customer experience by 30% with personalized service and VIP reservations!",
+      ],
+      buttonText: "Read Article",
+      href: `${baseHref}rooftop-lounge`,
+    },
+    {
+      scope: "Lounges",
+      heading: "Beachfront Lounge",
+      paragraph: [
+        "Increase beach party bookings by 20% with unique seaside events and promotions!",
+        "Boost social media presence by 30% with influencer beach parties and live broadcasts!",
+        "Enhance customer loyalty by 25% with beach loyalty cards and exclusive discounts!",
+      ],
+      buttonText: "Read Article",
+      href: `${baseHref}beachfront-lounge`,
+    },
+    {
+      scope: "Lounges",
+      heading: "Speakeasy",
+      paragraph: [
+        "Attract more customers by 20% with a secret menu and exclusive member events!",
+        "Boost social engagement by 25% with themed nights and historical cocktail specials!",
+        "Increase repeat visits by 30% with a members-only loyalty program and hidden perks!",
+      ],
+      buttonText: "Read Article",
+      href: `${baseHref}speakeasy`,
+    },
+    {
+      scope: "Lounges",
+      heading: "Hookah Lounge",
+      paragraph: [
+        "Boost evening sales by 20% with flavored hookah specials and group discounts!",
+        "Enhance customer retention by 25% with a unique loyalty program for regular visitors!",
+        "Increase social media following by 30% with themed nights and influencer collaborations!",
+      ],
+      buttonText: "Read Article",
+      href: `${baseHref}hookah-lounge`,
+    },
+    {
+      scope: "Lounges",
+      heading: "VIP Lounge",
+      paragraph: [
+        "Attract high-end clientele by offering 20% off on exclusive bottle service packages!",
+        "Boost special event bookings by 25% with luxury amenities and private hosting options!",
+        "Enhance online prestige by 30% with high-quality content showcasing VIP experiences!",
+      ],
+      buttonText: "Read Article",
+      href: `${baseHref}vip-lounge`,
+    },
+    {
+      scope: "Lounges",
+      heading: "Karaoke Lounge",
+      paragraph: [
+        "Increase group bookings by 20% with private karaoke rooms and party packages!",
+        "Enhance social media engagement by 25% with karaoke challenges and celebrity look-alike nights!",
+        "Boost repeat visits by 30% with a loyalty program for frequent singers and groups!",
+      ],
+      buttonText: "Read Article",
+      href: `${baseHref}karaoke-lounge`,
+    },
+    {
+      scope: "Lounges",
+      heading: "Sports Lounge",
+      paragraph: [
+        "Boost game day attendance by 20% with exclusive viewing parties and fan discounts!",
+        "Increase social media buzz by 25% with fantasy league nights and live sports discussions!",
+        "Enhance customer loyalty by 30% with rewards for game day regulars and team-themed events!",
+      ],
+      buttonText: "Read Article",
+      href: `${baseHref}sports-lounge`,
+    },
+    {
+      scope: "Lounges",
+      heading: "Retro Lounge",
+      paragraph: [
+        "Increase foot traffic by 20% with themed retro nights and vintage music playlists!",
+        "Boost social media engagement by 30% with retro costume contests and throwback events!",
+        "Enhance customer loyalty by 25% with a rewards program for regular patrons and special discounts!",
+      ],
+      buttonText: "Read Article",
+      href: `${baseHref}retro-lounge`,
+    },
+    {
+      scope: "Lounges",
+      heading: "Library Lounge",
+      paragraph: [
+        "Attract more visitors by 20% with book club meetings and author signing events!",
+        "Increase social media followers by 25% with literary themed nights and poetry readings!",
+        "Boost customer retention by 30% with a cozy ambiance and special membership perks!",
+      ],
+      buttonText: "Read Article",
+      href: `${baseHref}library-lounge`,
+    },
+    {
+      scope: "Lounges",
+      heading: "Art Lounge",
+      paragraph: [
+        "Boost visitor engagement by 20% with live art demonstrations and gallery nights!",
+        "Increase art sales by 25% with exclusive exhibitions and artist meet-and-greets!",
+        "Enhance online visibility by 30% with interactive art classes and social media showcases!",
+      ],
+      buttonText: "Read Article",
+      href: `${baseHref}art-lounge`,
+    },
+    {
+      scope: "Lounges",
+      heading: "Electronic Music Lounge",
+      paragraph: [
+        "Increase nightly attendance by 20% with guest DJ performances and electronic music events!",
+        "Boost social media presence by 25% with live-streamed shows and interactive online contests!",
+        "Enhance customer experience by 30% with immersive sound and light shows and VIP services!",
+      ],
+      buttonText: "Read Article",
+      href: `${baseHref}electronic-music-lounge`,
+    },
+    {
+      scope: "Lounges",
+      heading: "Garden Lounge",
+      paragraph: [
+        "Attract more guests by 20% with serene garden settings and nature-themed events!",
+        "Boost social media engagement by 25% with garden workshops and plant care tips!",
+        "Increase repeat visits by 30% with a peaceful atmosphere and loyalty discounts for regulars!",
+      ],
+      buttonText: "Read Article",
+      href: `${baseHref}garden-lounge`,
+    },
+    {
+      scope: "Lounges",
+      heading: "Comedy Lounge",
+      paragraph: [
+        "Boost attendance by 20% with weekly stand-up comedy nights and open mic events!",
+        "Increase online buzz by 25% with live-streamed performances and comedy challenges!",
+        "Enhance patron loyalty by 30% with a comedy club membership and exclusive show access!",
+      ],
+      buttonText: "Read Article",
+      href: `${baseHref}comedy-lounge`,
+    },
+    {
+      scope: "Lounges",
+      heading: "Tea Lounge",
+      paragraph: [
+        "Increase customer visits by 20% with specialty tea tastings and cultural tea ceremonies!",
+        "Boost online engagement by 25% with interactive tea blending workshops and social media content!",
+        "Enhance repeat business by 30% with a tea lover's loyalty program and seasonal tea offerings!",
+      ],
+      buttonText: "Read Article",
+      href: `${baseHref}tea-lounge`,
+    },
+    {
+      scope: "Lounges",
+      heading: "Latin Lounge",
+      paragraph: [
+        "Attract a vibrant crowd by 20% with Latin dance nights and live music events!",
+        "Increase social media presence by 30% with dance workshops and cultural celebrations!",
+        "Boost customer loyalty by 25% with Latin-themed drink specials and member-exclusive events!",
+      ],
+      buttonText: "Read Article",
+      href: `${baseHref}latin-lounge`,
+    },
+    {
+      scope: "Lounges",
+      heading: "Chill-out Lounge",
+      paragraph: [
+        "Increase relaxation seekers by 20% with ambient music nights and stress-free zones!",
+        "Boost social media reach by 25% with mindfulness workshops and relaxation tips!",
+        "Enhance customer retention by 30% with a calm atmosphere and loyalty relaxation packages!",
+      ],
+      buttonText: "Read Article",
+      href: `${baseHref}chill-out-lounge`,
+    },
+    {
+      scope: "Lounges",
+      heading: "Ice Lounge",
+      paragraph: [
+        "Attract adventurous guests by 20% with unique ice bar experiences and cool events!",
+        "Boost social media interaction by 25% with chilly photo ops and frosty drink specials!",
+        "Increase repeat visits by 30% with exclusive memberships and ice-themed events!",
+      ],
+      buttonText: "Read Article",
+      href: `${baseHref}ice-lounge`,
+    },
+  ];
+  const fastFood = [
+    {
+      scope: "Fast Food",
+      heading: "Burger Joint",
+      paragraph: [
+        "Maximize combo meal sales by 30% today with catchy digital signage and app-based ordering!",
+        "Increase drive-thru efficiency by 20% today with an optimized ordering system!",
+        "Boost online presence by 25% today with engaging social media campaigns and interactive contests!",
+      ],
+      buttonText: "Read Article",
+      href: `${baseHref}burger-joint`,
+    },
+    {
+      scope: "Fast Food",
+      heading: "Fried Chicken Outlet",
+      paragraph: [
+        "Elevate meal deal popularity by 35% today with limited-time offers and family-size specials!",
+        "Increase customer retention by 20% today with a loyalty rewards program and app discounts!",
+        "Grow brand recognition by 30% today with viral marketing campaigns and influencer endorsements!",
+      ],
+      buttonText: "Read Article",
+      href: `${baseHref}fried-chicken-outlet`,
+    },
+    {
+      scope: "Fast Food",
+      heading: "Pizza Takeaway",
+      paragraph: [
+        "Boost late-night sales by 25% today with special after-hours deals and online ordering!",
+        "Increase lunchtime orders by 20% with quick meal combos and business lunch specials!",
+        "Enhance online engagement by 30% today with interactive pizza customization apps!",
+      ],
+      buttonText: "Read Article",
+      href: `${baseHref}pizza-takeaway`,
+    },
+    {
+      scope: "Fast Food",
+      heading: "Taco Stand",
+      paragraph: [
+        "Increase foot traffic by 20% with vibrant street signage and speedy service!",
+        "Boost online sales by 30% with an efficient ordering app and delivery partnerships!",
+        "Grow social media following by 25% with tasty visuals and customer engagement campaigns!",
+      ],
+      buttonText: "Read Article",
+      href: `${baseHref}taco-stand`,
+    },
+    {
+      scope: "Fast Food",
+      heading: "Sandwich Shop",
+      paragraph: [
+        "Maximize lunch rush sales by 20% with express line options and pre-order apps!",
+        "Enhance customer loyalty by 25% with a sandwich loyalty card and frequent buyer rewards!",
+        "Increase online visibility by 30% with a dynamic social media strategy and engaging content!",
+      ],
+      buttonText: "Read Article",
+      href: `${baseHref}sandwich-shop`,
+    },
+    {
+      scope: "Fast Food",
+      heading: "Fish and Chips Shop",
+      paragraph: [
+        "Boost sales by 20% with online ordering and family meal deals!",
+        "Increase local popularity by 25% with community engagement and special local offers!",
+        "Enhance brand presence by 30% with a focused online marketing strategy and customer reviews!",
+      ],
+      buttonText: "Read Article",
+      href: `${baseHref}fish-and-chips-shop`,
+    },
+    {
+      scope: "Fast Food",
+      heading: "Donut Shop",
+      paragraph: [
+        "Increase morning rush sales by 30% with fresh-baked specials and coffee combos!",
+        "Boost brand loyalty by 25% with a 'donut of the month' club and exclusive member discounts!",
+        "Expand social media reach by 35% with engaging visuals and interactive donut design contests!",
+      ],
+      buttonText: "Read Article",
+      href: `${baseHref}donut-shop`,
+    },
+    {
+      scope: "Fast Food",
+      heading: "Ice Cream Parlor",
+      paragraph: [
+        "Enhance summer sales by 40% with new flavors and sundae specials!",
+        "Grow family visits by 30% with interactive topping bars and family discount days!",
+        "Increase social media engagement by 25% with photo contests and influencer collaborations!",
+      ],
+      buttonText: "Read Article",
+      href: `${baseHref}ice-cream-parlor`,
+    },
+    {
+      scope: "Fast Food",
+      heading: "Pretzel Kiosk",
+      paragraph: [
+        "Boost mall sales by 20% with scent marketing and quick grab-and-go options!",
+        "Increase repeat customers by 25% with loyalty punch cards and special offers!",
+        "Enhance online presence by 30% with targeted local advertising and social media campaigns!",
+      ],
+      buttonText: "Read Article",
+      href: `${baseHref}pretzel-kiosk`,
+    },
+    {
+      scope: "Fast Food",
+      heading: "Bagel Store",
+      paragraph: [
+        "Maximize breakfast crowd sales by 25% with bagel and coffee combos!",
+        "Increase catering orders by 20% with online ordering systems and business lunch packages!",
+        "Grow social media following by 30% with engaging content and community-driven events!",
+      ],
+      buttonText: "Read Article",
+      href: `${baseHref}bagel-store`,
+    },
+    {
+      scope: "Fast Food",
+      heading: "Smoothie and Juice Bar",
+      paragraph: [
+        "Boost health-conscious customer sales by 30% with new wellness blends and loyalty programs!",
+        "Increase foot traffic by 20% with quick-service options and mobile pre-ordering!",
+        "Enhance online engagement by 25% with interactive flavor polls and health tips!",
+      ],
+      buttonText: "Read Article",
+      href: `${baseHref}smoothie-juice-bar`,
+    },
+    {
+      scope: "Fast Food",
+      heading: "Hot Dog Stand",
+      paragraph: [
+        "Increase lunchtime sales by 20% with special hot dog combos and quick service!",
+        "Boost event sales by 25% with catering options for parties and events!",
+        "Grow online visibility by 30% with strategic local marketing and engaging social media content!",
+      ],
+      buttonText: "Read Article",
+      href: `${baseHref}hot-dog-stand`,
+    },
+  ];
+  const catering = [
+    {
+      scope: "Catering",
+      heading: "Wedding Catering",
+      paragraph: [
+        "Increase booking rates by 20% today with customizable wedding menu options!",
+        "Enhance client satisfaction by 25% today with professional event planning services!",
+        "Boost social media presence by 30% today with stunning wedding catering photos and testimonials!",
+      ],
+      buttonText: "Read Article",
+      href: `${baseHref}wedding-catering`,
+    },
+    {
+      scope: "Catering",
+      heading: "Corporate Event Catering",
+      paragraph: [
+        "Increase efficiency by 15% today with seamless online ordering for corporate events!",
+        "Enhance brand reputation by 20% today with high-quality, sustainable catering options!",
+        "Boost client retention by 25% today with customizable menus for diverse corporate needs!",
+      ],
+      buttonText: "Read Article",
+      href: `${baseHref}corporate-event-catering`,
+    },
+    {
+      scope: "Catering",
+      heading: "Birthday Party Catering",
+      paragraph: [
+        "Attract more clients by 20% today with creative and thematic party menus!",
+        "Increase customer loyalty by 25% today with personalized catering services!",
+        "Enhance online visibility by 30% today with interactive social media campaigns!",
+      ],
+      buttonText: "Read Article",
+      href: `${baseHref}birthday-party-catering`,
+    },
+    {
+      scope: "Catering",
+      heading: "Buffet Catering",
+      paragraph: [
+        "Boost customer engagement by 20% today with diverse and inclusive buffet options!",
+        "Enhance customer experience by 25% today with live cooking stations and custom food bars!",
+        "Increase market reach by 30% today with targeted advertising and strategic partnerships!",
+      ],
+      buttonText: "Read Article",
+      href: `${baseHref}buffet-catering`,
+    },
+    {
+      scope: "Catering",
+      heading: "BBQ Catering",
+      paragraph: [
+        "Increase event bookings by 20% today with unique BBQ themes and setups!",
+        "Boost customer satisfaction by 25% today with a variety of meat and vegetarian options!",
+        "Enhance brand recognition by 30% today with aggressive social media marketing!",
+      ],
+      buttonText: "Read Article",
+      href: `${baseHref}bbq-catering`,
+    },
+    {
+      scope: "Catering",
+      heading: "Cocktail Party Catering",
+      paragraph: [
+        "Boost event bookings by 25% today with innovative cocktail menus and mixology classes!",
+        "Enhance guest experience by 20% today with personalized cocktail options and themed bars!",
+        "Increase online engagement by 30% today with vibrant social media content featuring cocktail creations!",
+      ],
+      buttonText: "Read Article",
+      href: `${baseHref}cocktail-party-catering`,
+    },
+    {
+      scope: "Catering",
+      heading: "Private Chef Services",
+      paragraph: [
+        "Attract more clients by 20% today with exclusive private dining experiences!",
+        "Enhance customer loyalty by 25% today with personalized menu planning and cooking classes!",
+        "Boost online visibility by 30% today with behind-the-scenes content and chef's stories!",
+      ],
+      buttonText: "Read Article",
+      href: `${baseHref}private-chef-services`,
+    },
+    {
+      scope: "Catering",
+      heading: "Food Truck Catering",
+      paragraph: [
+        "Increase event bookings by 20% today with unique and versatile food truck options!",
+        "Boost social media presence by 25% today with live event coverage and customer interaction!",
+        "Enhance brand recognition by 30% today with creative branding and community involvement!",
+      ],
+      buttonText: "Read Article",
+      href: `${baseHref}food-truck-catering`,
+    },
+    {
+      scope: "Catering",
+      heading: "Gourmet Catering",
+      paragraph: [
+        "Attract high-end clients by 20% today with luxury gourmet dishes and exclusive services!",
+        "Increase market presence by 25% today with signature dishes and renowned chef collaborations!",
+        "Enhance online reviews by 30% today with exceptional service and customer testimonial campaigns!",
+      ],
+      buttonText: "Read Article",
+      href: `${baseHref}gourmet-catering`,
+    },
+    {
+      scope: "Catering",
+      heading: "Vegan Catering",
+      paragraph: [
+        "Boost market share by 20% today with creative and diverse vegan menu options!",
+        "Enhance client satisfaction by 25% today with organic and locally sourced ingredients!",
+        "Increase social media engagement by 30% today with vegan cooking workshops and recipe sharing!",
+      ],
+      buttonText: "Read Article",
+      href: `${baseHref}vegan-catering`,
+    },
+    {
+      scope: "Catering",
+      heading: "Seafood Catering",
+      paragraph: [
+        "Increase bookings by 20% today with fresh and sustainable seafood options!",
+        "Enhance customer experience by 25% today with interactive seafood stations and chef demonstrations!",
+        "Boost online presence by 30% today with engaging content and sea-to-table stories!",
+      ],
+      buttonText: "Read Article",
+      href: `${baseHref}seafood-catering`,
+    },
+    {
+      scope: "Catering",
+      heading: "Festival Catering",
+      paragraph: [
+        "Attract more festival goers by 20% today with a variety of global cuisine options!",
+        "Increase customer retention by 25% today with interactive food booths and live cooking shows!",
+        "Enhance social media buzz by 30% today with festival highlights and customer engagement strategies!",
+      ],
+      buttonText: "Read Article",
+      href: `${baseHref}festival-catering`,
+    },
+    {
+      scope: "Catering",
+      heading: "International Cuisine Catering",
+      paragraph: [
+        "Boost client interest by 20% today with a diverse range of international culinary specialties!",
+        "Enhance event appeal by 25% today with culturally themed menus and decor!",
+        "Increase online interactions by 30% today with stories and posts about international food traditions!",
+      ],
+      buttonText: "Read Article",
+      href: `${baseHref}international-cuisine-catering`,
+    },
+    {
+      scope: "Catering",
+      heading: "Themed Event Catering",
+      paragraph: [
+        "Attract niche markets by 20% today with specialized themed event catering!",
+        "Boost customer excitement by 25% today with unique decor and menu matching the theme!",
+        "Enhance online visibility by 30% today with engaging posts and photos of themed events!",
+      ],
+      buttonText: "Read Article",
+      href: `${baseHref}themed-event-catering`,
+    },
+    {
+      scope: "Catering",
+      heading: "Custom Catering",
+      paragraph: [
+        "Increase customer satisfaction by 20% today with fully customizable catering options!",
+        "Enhance brand loyalty by 25% today with tailored menus to suit every client's need!",
+        "Boost market reach by 30% today with personalized and versatile catering services!",
+      ],
+      buttonText: "Read Article",
+      href: `${baseHref}custom-catering`,
+    },
+  ];
   const sections = [
     {
       title: "Restaurants",
@@ -380,101 +1078,139 @@ const FoodAndBeverages = () => {
         { title: "Pop-up Bar", href: `${baseHref}pop-up-bar` },
       ],
     },
+    {
+      title: "Cafes",
+      subSections: [
+        {
+          title: "Artisan Coffee Shop",
+          href: `${baseHref}artisan-coffee-shop`,
+        },
+        {
+          title: "Neighborhood Bakery Cafe",
+          href: `${baseHref}neighborhood-bakery-cafe`,
+        },
+        { title: "Tea House", href: `${baseHref}tea-house` },
+        { title: "Vegan Café", href: `${baseHref}vegan-cafe` },
+        { title: "Bookstore Café", href: `${baseHref}bookstore-cafe` },
+        { title: "Dessert Café", href: `${baseHref}dessert-cafe` },
+        { title: "Internet Café", href: `${baseHref}internet-cafe` },
+        { title: "Organic Juice Bar", href: `${baseHref}organic-juice-bar` },
+        { title: "Gourmet Coffee Bar", href: `${baseHref}gourmet-coffee-bar` },
+        {
+          title: "Health and Wellness Café",
+          href: `${baseHref}health-wellness-cafe`,
+        },
+        { title: "Retro Style Café", href: `${baseHref}retro-style-cafe` },
+        { title: "Student Study Café", href: `${baseHref}student-study-cafe` },
+        { title: "Themed Café", href: `${baseHref}themed-cafe` },
+        { title: "Luxury Café", href: `${baseHref}luxury-cafe` },
+        {
+          title: "Local Community Café",
+          href: `${baseHref}local-community-cafe`,
+        },
+      ],
+    },
+    {
+      title: "Lounges",
+      subSections: [
+        { title: "Cocktail Bar", href: `${baseHref}cocktail-bar` },
+        { title: "Wine Lounge", href: `${baseHref}wine-lounge` },
+        { title: "Jazz Lounge", href: `${baseHref}jazz-lounge` },
+        { title: "Rooftop Lounge", href: `${baseHref}rooftop-lounge` },
+        { title: "Beachfront Lounge", href: `${baseHref}beachfront-lounge` },
+        { title: "Speakeasy", href: `${baseHref}speakeasy` },
+        { title: "Hookah Lounge", href: `${baseHref}hookah-lounge` },
+        { title: "VIP Lounge", href: `${baseHref}vip-lounge` },
+        { title: "Karaoke Lounge", href: `${baseHref}karaoke-lounge` },
+        { title: "Sports Lounge", href: `${baseHref}sports-lounge` },
+        { title: "Retro Lounge", href: `${baseHref}retro-lounge` },
+        { title: "Library Lounge", href: `${baseHref}library-lounge` },
+        { title: "Art Lounge", href: `${baseHref}art-lounge` },
+        {
+          title: "Electronic Music Lounge",
+          href: `${baseHref}electronic-music-lounge`,
+        },
+        { title: "Garden Lounge", href: `${baseHref}garden-lounge` },
+        { title: "Comedy Lounge", href: `${baseHref}comedy-lounge` },
+        { title: "Tea Lounge", href: `${baseHref}tea-lounge` },
+        { title: "Latin Lounge", href: `${baseHref}latin-lounge` },
+        { title: "Chill-out Lounge", href: `${baseHref}chill-out-lounge` },
+        { title: "Ice Lounge", href: `${baseHref}ice-lounge` },
+      ],
+    },
+    {
+      title: "Fast Food",
+      subSections: [
+        { title: "Burger Joint", href: `${baseHref}burger-joint` },
+        {
+          title: "Fried Chicken Outlet",
+          href: `${baseHref}fried-chicken-outlet`,
+        },
+        { title: "Pizza Takeaway", href: `${baseHref}pizza-takeaway` },
+        { title: "Taco Stand", href: `${baseHref}taco-stand` },
+        { title: "Sandwich Shop", href: `${baseHref}sandwich-shop` },
+        {
+          title: "Fish and Chips Shop",
+          href: `${baseHref}fish-and-chips-shop`,
+        },
+        { title: "Donut Shop", href: `${baseHref}donut-shop` },
+        { title: "Ice Cream Parlor", href: `${baseHref}ice-cream-parlor` },
+        { title: "Pretzel Kiosk", href: `${baseHref}pretzel-kiosk` },
+        { title: "Bagel Store", href: `${baseHref}bagel-store` },
+        {
+          title: "Smoothie and Juice Bar",
+          href: `${baseHref}smoothie-juice-bar`,
+        },
+        { title: "Hot Dog Stand", href: `${baseHref}hot-dog-stand` },
+      ],
+    },
+    {
+      title: "Catering",
+      subSections: [
+        { title: "Wedding Catering", href: `${baseHref}wedding-catering` },
+        {
+          title: "Corporate Event Catering",
+          href: `${baseHref}corporate-event-catering`,
+        },
+        {
+          title: "Birthday Party Catering",
+          href: `${baseHref}birthday-party-catering`,
+        },
+        { title: "Buffet Catering", href: `${baseHref}buffet-catering` },
+        { title: "BBQ Catering", href: `${baseHref}bbq-catering` },
+        {
+          title: "Cocktail Party Catering",
+          href: `${baseHref}cocktail-party-catering`,
+        },
+        {
+          title: "Private Chef Services",
+          href: `${baseHref}private-chef-services`,
+        },
+        {
+          title: "Food Truck Catering",
+          href: `${baseHref}food-truck-catering`,
+        },
+        { title: "Gourmet Catering", href: `${baseHref}gourmet-catering` },
+        { title: "Vegan Catering", href: `${baseHref}vegan-catering` },
+        { title: "Seafood Catering", href: `${baseHref}seafood-catering` },
+        { title: "Festival Catering", href: `${baseHref}festival-catering` },
+        {
+          title: "International Cuisine Catering",
+          href: `${baseHref}international-cuisine-catering`,
+        },
+        {
+          title: "Themed Event Catering",
+          href: `${baseHref}themed-event-catering`,
+        },
+        { title: "Custom Catering", href: `${baseHref}custom-catering` },
+      ],
+    },
   ];
-
-  const getRandomParagraph = (scope) => {
-    const randomCategory = scope[Math.floor(Math.random() * scope.length)];
-    return randomCategory.paragraph[
-      Math.floor(Math.random() * randomCategory.paragraph.length)
-    ];
-  };
 
   return (
     <div className="w-10/12 mx-auto pt-16">
       <H1>Food & Beverages</H1>
-      <div className=" flex h-fit w-full my-4">
-        <nav data-slot="base" aria-label="Breadcrumbs">
-          <ol
-            data-slot="list"
-            className="flex flex-wrap list-none rounded-small"
-          >
-            <li data-slot="base" className="flex items-center">
-              <span
-                data-slot="item"
-                className="flex gap-1 items-center cursor-pointer whitespace-nowrap line-clamp-1 tap-highlight-transparent outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 text-foreground/50 text-small hover:opacity-80 active:opacity-disabled transition-opacity no-underline"
-                tabIndex="0"
-                role="link"
-              >
-                Home
-              </span>
-              <span
-                data-slot="separator"
-                aria-hidden="true"
-                className="px-1 text-foreground/50"
-              >
-                <svg
-                  aria-hidden="true"
-                  fill="none"
-                  focusable="false"
-                  height="1em"
-                  role="presentation"
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="1.5"
-                  viewBox="0 0 24 24"
-                  width="1em"
-                >
-                  <path d="m9 18 6-6-6-6"></path>
-                </svg>
-              </span>
-            </li>
-            <li data-slot="base" className="flex items-center">
-              <span
-                data-slot="item"
-                className="flex gap-1 items-center cursor-pointer whitespace-nowrap line-clamp-1 tap-highlight-transparent outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 text-foreground/50 text-small hover:opacity-80 active:opacity-disabled transition-opacity no-underline"
-                tabIndex="0"
-                role="link"
-              >
-                Hospitality
-              </span>
-              <span
-                data-slot="separator"
-                aria-hidden="true"
-                className="px-1 text-foreground/50"
-              >
-                <svg
-                  aria-hidden="true"
-                  fill="none"
-                  focusable="false"
-                  height="1em"
-                  role="presentation"
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="1.5"
-                  viewBox="0 0 24 24"
-                  width="1em"
-                >
-                  <path d="m9 18 6-6-6-6"></path>
-                </svg>
-              </span>
-            </li>
-            <li data-slot="base" className="flex items-center">
-              <span
-                data-slot="item"
-                data-current="true"
-                className="flex gap-1 items-center whitespace-nowrap line-clamp-1 tap-highlight-transparent outline-none text-small no-underline cursor-default transition-opacity text-foreground font-bold"
-                aria-disabled="true"
-                role="link"
-                aria-current="page"
-              >
-                Food & Beverages
-              </span>
-            </li>
-          </ol>
-        </nav>
-      </div>{" "}
+      <Breadcrumbs />
       <div className="flex gap-6 pt-4">
         <div className="w-3/4">
           <Section
@@ -485,6 +1221,26 @@ const FoodAndBeverages = () => {
           <Section
             title="Bars"
             items={bars}
+            getRandomParagraph={getRandomParagraph}
+          />
+          <Section
+            title="Cafes"
+            items={cafes}
+            getRandomParagraph={getRandomParagraph}
+          />
+          <Section
+            title="Lounges"
+            items={lounges}
+            getRandomParagraph={getRandomParagraph}
+          />
+          <Section
+            title="Fast Food"
+            items={fastFood}
+            getRandomParagraph={getRandomParagraph}
+          />
+          <Section
+            title="Catering"
+            items={catering}
             getRandomParagraph={getRandomParagraph}
           />
         </div>

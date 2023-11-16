@@ -4,7 +4,7 @@ import CategoryBlock from "@/app/components/CategoryBlock";
 
 const Section = ({ title, items, getRandomParagraph }) => (
   <div>
-    <H2>{title}</H2>
+    <H2 id={title}>{title}</H2>
     <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-6">
       {items.map((item, index) => (
         <CategoryBlock
