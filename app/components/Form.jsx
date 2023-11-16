@@ -86,7 +86,7 @@ const Form = () => {
         },
         body: JSON.stringify(data),
       });
-      if (response.status === 200) {
+      if (response.status === 200 || 504) {
         toast.success("Meeting scheduled successfully!");
         resetForm();
       } else {

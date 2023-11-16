@@ -4,5 +4,9 @@
   "/contact-us/page": "app/contact-us/page.js",
   "/page": "app/page.js",
   "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/qwerty/hospitality/events/page": "app/qwerty/hospitality/events/page.js",
+  "/qwerty/hospitality/entertainment/page": "app/qwerty/hospitality/entertainment/page.js",
+  "/qwerty/hospitality/food-and-beverages/page": "app/qwerty/hospitality/food-and-beverages/page.js",
+  "/qwerty/hospitality/lodging/page": "app/qwerty/hospitality/lodging/page.js",
   "/qwerty/page": "app/qwerty/page.js"
 }
