@@ -1,78 +1,86 @@
 {
   "pages": {
     "/_not-found": [
-      "static/chunks/webpack-dda5e7316e4e4ca1.js",
+      "static/chunks/webpack-37d4a2e80401c78a.js",
       "static/chunks/fd9d1056-3fff9b67ef16feea.js",
       "static/chunks/472-58d4ffdf643c4623.js",
       "static/chunks/main-app-cbaa3743068302ef.js",
       "static/chunks/app/_not-found-1187c250942edf8e.js"
     ],
     "/layout": [
-      "static/chunks/webpack-dda5e7316e4e4ca1.js",
+      "static/chunks/webpack-37d4a2e80401c78a.js",
       "static/chunks/fd9d1056-3fff9b67ef16feea.js",
       "static/chunks/472-58d4ffdf643c4623.js",
       "static/chunks/main-app-cbaa3743068302ef.js",
       "static/chunks/326-d3165eaea91a5f09.js",
-      "static/chunks/99-394b4b6754ae9009.js",
-      "static/css/db0bc2ab17ad52b7.css",
-      "static/chunks/app/layout-72fd9e628bd150f0.js"
+      "static/chunks/99-71e179d3df19b7f5.js",
+      "static/css/d2b603d82542d02b.css",
+      "static/chunks/app/layout-59059fbac5433cab.js"
     ],
     "/contact-us/page": [
-      "static/chunks/webpack-dda5e7316e4e4ca1.js",
+      "static/chunks/webpack-37d4a2e80401c78a.js",
       "static/chunks/fd9d1056-3fff9b67ef16feea.js",
       "static/chunks/472-58d4ffdf643c4623.js",
       "static/chunks/main-app-cbaa3743068302ef.js",
       "static/chunks/326-d3165eaea91a5f09.js",
-      "static/chunks/99-394b4b6754ae9009.js",
+      "static/chunks/99-71e179d3df19b7f5.js",
       "static/chunks/770-dd3ca8be82755222.js",
       "static/css/431944509084d071.css",
-      "static/chunks/app/contact-us/page-d5d3cc3dc701ca35.js"
+      "static/chunks/app/contact-us/page-455a9bc8c15b2073.js"
     ],
     "/qwerty/hospitality/entertainment/page": [
-      "static/chunks/webpack-dda5e7316e4e4ca1.js",
+      "static/chunks/webpack-37d4a2e80401c78a.js",
       "static/chunks/fd9d1056-3fff9b67ef16feea.js",
       "static/chunks/472-58d4ffdf643c4623.js",
       "static/chunks/main-app-cbaa3743068302ef.js",
       "static/chunks/app/qwerty/hospitality/entertainment/page-7ffa9049d735daa3.js"
     ],
     "/page": [
-      "static/chunks/webpack-dda5e7316e4e4ca1.js",
+      "static/chunks/webpack-37d4a2e80401c78a.js",
       "static/chunks/fd9d1056-3fff9b67ef16feea.js",
       "static/chunks/472-58d4ffdf643c4623.js",
       "static/chunks/main-app-cbaa3743068302ef.js",
       "static/chunks/326-d3165eaea91a5f09.js",
-      "static/chunks/99-394b4b6754ae9009.js",
-      "static/chunks/app/page-bc24ea0c88384a5c.js"
+      "static/chunks/99-71e179d3df19b7f5.js",
+      "static/chunks/app/page-6215c0d5f7534a31.js"
     ],
     "/qwerty/hospitality/events/page": [
-      "static/chunks/webpack-dda5e7316e4e4ca1.js",
+      "static/chunks/webpack-37d4a2e80401c78a.js",
       "static/chunks/fd9d1056-3fff9b67ef16feea.js",
       "static/chunks/472-58d4ffdf643c4623.js",
       "static/chunks/main-app-cbaa3743068302ef.js",
       "static/chunks/app/qwerty/hospitality/events/page-027af8faecbb5d76.js"
     ],
-    "/qwerty/hospitality/food-and-beverages/page": [
-      "static/chunks/webpack-dda5e7316e4e4ca1.js",
+    "/qwerty/hospitality/food-and-beverages/[businessId]/page": [
+      "static/chunks/webpack-37d4a2e80401c78a.js",
       "static/chunks/fd9d1056-3fff9b67ef16feea.js",
       "static/chunks/472-58d4ffdf643c4623.js",
       "static/chunks/main-app-cbaa3743068302ef.js",
       "static/chunks/326-d3165eaea91a5f09.js",
-      "static/chunks/app/qwerty/hospitality/food-and-beverages/page-9c76cd9f74b6837e.js"
+      "static/chunks/app/qwerty/hospitality/food-and-beverages/[businessId]/page-65c8e15a313e6ff4.js"
+    ],
+    "/qwerty/hospitality/lodging/page": [
+      "static/chunks/webpack-37d4a2e80401c78a.js",
+      "static/chunks/fd9d1056-3fff9b67ef16feea.js",
+      "static/chunks/472-58d4ffdf643c4623.js",
+      "static/chunks/main-app-cbaa3743068302ef.js",
+      "static/chunks/app/qwerty/hospitality/lodging/page-5cc68c3a921323ca.js"
+    ],
+    "/qwerty/hospitality/food-and-beverages/page": [
+      "static/chunks/webpack-37d4a2e80401c78a.js",
+      "static/chunks/fd9d1056-3fff9b67ef16feea.js",
+      "static/chunks/472-58d4ffdf643c4623.js",
+      "static/chunks/main-app-cbaa3743068302ef.js",
+      "static/chunks/326-d3165eaea91a5f09.js",
+      "static/chunks/app/qwerty/hospitality/food-and-beverages/page-f5d517171c41982e.js"
     ],
     "/qwerty/page": [
-      "static/chunks/webpack-dda5e7316e4e4ca1.js",
+      "static/chunks/webpack-37d4a2e80401c78a.js",
       "static/chunks/fd9d1056-3fff9b67ef16feea.js",
       "static/chunks/472-58d4ffdf643c4623.js",
       "static/chunks/main-app-cbaa3743068302ef.js",
       "static/chunks/326-d3165eaea91a5f09.js",
       "static/chunks/app/qwerty/page-51caf8f722cb22bf.js"
-    ],
-    "/qwerty/hospitality/lodging/page": [
-      "static/chunks/webpack-dda5e7316e4e4ca1.js",
-      "static/chunks/fd9d1056-3fff9b67ef16feea.js",
-      "static/chunks/472-58d4ffdf643c4623.js",
-      "static/chunks/main-app-cbaa3743068302ef.js",
-      "static/chunks/app/qwerty/hospitality/lodging/page-5cc68c3a921323ca.js"
     ]
   }
 }
