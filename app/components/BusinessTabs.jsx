@@ -1,100 +1,76 @@
 import React from "react";
-import Sidebar from "@/app/components/Sidebar";
+import SidebarGuide from "@/app/components/SidebarGuide";
 import Paragraph from "./Paragraph";
+import H2 from "@/app/components/H2";
+import H3 from "@/app/components/H3";
 
 const BusinessTabs = ({ tabs, activeTab, setActiveTab }) => {
-  const baseHref =
-    "qwerty/blog/hospitality/food-and-beverages/what-is-the-best-pos-system";
-  const sections = [
-    {
-      title: "Essential Technologies:",
-      subSections: [
-        {
-          title: "Point of Sale (POS) System",
-          href: `${baseHref}italian-trattoria`,
-        },
-        {
-          title: " Basic Reservation System",
-          href: `${baseHref}sushi-restaurant`,
-        },
-        {
-          title: "Inventory Management Software",
-          href: `${baseHref}steakhouse`,
-        },
-        {
-          title: "Website and Online Presence(Maps)",
-          href: `${baseHref}vegan-restaurant`,
-        },
-        { title: "Social Media", href: `${baseHref}seafood-restaurant` },
-        {
-          title: "Basic Accounting Software",
-          href: `${baseHref}mexican-restaurant`,
-        },
-      ],
-    },
-    {
-      title: "Optional but Beneficial Technologies:",
-      subSections: [
-        {
-          title: "Online Ordering and Delivery ",
-          href: `${baseHref}italian-trattoria`,
-        },
-        {
-          title: " Customer Relationship Management (CRM)",
-          href: `${baseHref}sushi-restaurant`,
-        },
-        {
-          title: "Kitchen Display Systems (KDS)",
-          href: `${baseHref}steakhouse`,
-        },
-        {
-          title: "Employee Scheduling and Management Systems",
-          href: `${baseHref}vegan-restaurant`,
-        },
-        {
-          title: "Online Feedback and Review Management",
-          href: `${baseHref}seafood-restaurant`,
-        },
-        {
-          title: "Basic SEO andEmail Marketing",
-          href: `${baseHref}mexican-restaurant`,
-        },
-      ],
-    },
-  ];
   return (
     <div className="">
       <div className="flex justify-center mb-4 ">
         <div className="w-fit bg-neutral-900 rounded-xl	 p-1	">
           {tabs.map((tab) => (
             <button
-              key={tab.title}
+              key={tab.type}
               className={`px-4 py-2 ${
-                activeTab === tab.title
+                activeTab === tab.type
                   ? "  bg-neutral-700 rounded-lg text-white"
                   : "text-neutral-400"
               }`}
-              onClick={() => setActiveTab(tab.title)}
+              onClick={() => setActiveTab(tab.type)}
             >
-              {tab.title}
+              {tab.type}
             </button>
           ))}
         </div>
       </div>
       {tabs.map((tab) => (
         <div
-          key={tab.title}
+          key={tab.type}
           className={`tab-content ${
-            activeTab === tab.title ? "block" : "hidden"
+            activeTab === tab.type ? "block" : "hidden"
           }`}
         >
           <div className="flex">
             <div className="w-3/4">
-              <Paragraph className="indent-10	">{tab.context}</Paragraph>{" "}
-              {tab.content}
-            </div>
+              <Paragraph className="indent-10	">{tab.context}</Paragraph>
+              {tab.content.map((section, index) => (
+                <div key={index}>
+                  {index === 0 ? (
+                    <>
+                      <Paragraph>{section.content}</Paragraph>
+                      <H2 id={section.href}>{section.title}</H2>
+                    </>
+                  ) : (
+                    <>
+                      <H2 id={section.href}>{section.title}</H2>
+                      <Paragraph>{section.content}</Paragraph>
+                    </>
+                  )}
 
-            <Sidebar sections={sections} />
+                  {section.subSections ? (
+                    <>
+                      {section.subSections.map((subSection, idx) => (
+                        <div key={idx}>
+                          <H3 id={subSection.id} styles="pt-4">
+                            {idx + 1 + ". " + subSection.title}
+                          </H3>
+                          <Paragraph>{subSection.content}</Paragraph>
+                        </div>
+                      ))}
+                    </>
+                  ) : (
+                    ""
+                  )}
+                </div>
+              ))}
+            </div>
+            <SidebarGuide
+              tabs={tabs
+                .filter((tab) => tab.type === activeTab)
+                .map((tab) => tab.content)
+                .flat()}
+            />
           </div>
         </div>
       ))}
