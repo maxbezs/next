@@ -15,7 +15,7 @@ const Breadcrumbs = () => {
   const pathSegments = paths.split("/").filter((path) => path);
 
   return (
-    <div className="flex h-fit w-full my-4">
+    <div className="flex h-fit w-fit my-4">
       <nav data-slot="base" aria-label="Breadcrumbs">
         <ol data-slot="list" className="flex flex-wrap list-none rounded-small">
           {pathSegments.map((segment, index) => {

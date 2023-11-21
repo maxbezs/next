@@ -1,6 +1,9 @@
-const Paragraph = ({ className, children }) => {
+const Paragraph = ({ className, children, dangerouslySetInnerHTML }) => {
   return (
-    <p className={className + " text-base md:text-lg lg:text-xl mb-4"}>
+    <p
+      dangerouslySetInnerHTML={dangerouslySetInnerHTML}
+      className={className + " text-base md:text-lg lg:text-xl mb-4"}
+    >
       {children}
     </p>
   );

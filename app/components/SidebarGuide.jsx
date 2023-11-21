@@ -12,7 +12,11 @@ const SidebarGuide = ({ tabs }) => {
           {tabs.map((section, index) => (
             <li key={index} className="mb-4">
               <p className="text-lg font-medium">
-                <a href={"#" + section.title}>{section.title}</a>
+                {section.title === "In Conclusion" ? (
+                  ""
+                ) : (
+                  <a href={"#" + section.href}>{section.title}</a>
+                )}
               </p>
               <ul className="ml-4">
                 {section.subSections ? (

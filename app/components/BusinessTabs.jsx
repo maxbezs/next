@@ -1,10 +1,14 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 import SidebarGuide from "@/app/components/SidebarGuide";
 import Paragraph from "./Paragraph";
 import H2 from "@/app/components/H2";
 import H3 from "@/app/components/H3";
 
-const BusinessTabs = ({ tabs, activeTab, setActiveTab }) => {
+const BusinessTabs = ({ tabs }) => {
+  const [activeTab, setActiveTab] = useState("Middle");
+
   return (
     <div className="">
       <div className="flex justify-center mb-4 ">
@@ -55,7 +59,11 @@ const BusinessTabs = ({ tabs, activeTab, setActiveTab }) => {
                           <H3 id={subSection.id} styles="pt-4">
                             {idx + 1 + ". " + subSection.title}
                           </H3>
-                          <Paragraph>{subSection.content}</Paragraph>
+                          <Paragraph
+                            dangerouslySetInnerHTML={{
+                              __html: subSection.content,
+                            }}
+                          ></Paragraph>
                         </div>
                       ))}
                     </>
